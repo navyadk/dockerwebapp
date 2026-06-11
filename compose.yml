@@ -2,12 +2,12 @@
 version: "3"
 services:
  devopsdb:
-   image: navyakoneti/docker:dbimg
+   image: navyakoneti/docker:dbimage
    ports:
      - "3306:3306"
 
  application:
-   image: navyakoneti/docker:appimg
+   image: navyakoneti/docker:appimage
    ports:
      - "1111-1113:8080"
    deploy:
