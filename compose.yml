@@ -2,7 +2,7 @@
 version: "3"
 services:
  devopsdb:
-   image: shaikmustafa/harikanew:dbimage
+   image: shaikmustafa/newrepo:dbimage
    ports:
      - "3306:3306"
 
