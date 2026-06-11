@@ -5,6 +5,11 @@ services:
    image: navyakoneti/docker:dbimage
    ports:
      - "3306:3306"
+   networks:
+     - appnetwork
+     - dbnetwork
+   volumes:
+     - appvolume:/usr/share/nginx/html/
 
  application:
    image: navyakoneti/docker:appimage
@@ -14,3 +19,14 @@ services:
       replicas: 3
    depends_on:
      - "devopsdb"
+   networks:
+     - appnetwork
+     - dbnetwork
+   volumes:
+     - dbvolume:/usr/local/apache2/htdocs/
+networks:
+  appnetwork:
+  dbnetwork:
+volumes:
+  appvolume:
+  dbvolume:
